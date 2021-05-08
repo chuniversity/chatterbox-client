@@ -4,13 +4,12 @@ var Parse = {
 
   create: function (message, successCB, errorCB = null) {
     // todo: save a message to the server
-    // url
-    // type : post
     // pretty much the same as below
     $.ajax({
+      // replace data with message variable
       url: Parse.server,
       type: 'POST',
-      data: { order: '-createdAt' },
+      data: JSON.stringify(message),
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function (error) {
@@ -36,3 +35,6 @@ var Parse = {
   }
 
 };
+
+//in messages
+//maps all of the parse.readAll messages (using GET) into their own object, where we receive the user, message, and room name
