@@ -4,10 +4,27 @@ var Messages = {
     for (var i = 0; i < data.length; i++) {
       //TO PREVENT XSS INJECTION
       //if username, text, or roomname includes "<" ignore
-      Messages.storage.push(data[i]);
+      if (data[i].text !== null) {
+        if (data[i].roomname === null) {
+          data[i].roomname = 'Lobby';
+        }
+        if (data[i].text.indexOf("<")) {
+          Messages.storage.push(data[i]);
+        }
+      }
     }
+  },
+  empty: function () {
+    Messages.storage = [];
   }
+  // update: function () {
+  //   setInterval(function () {
+  //     App.fetch(App.stopSpinner);
+  //   }, 3000)
+  // }
 };
+
+
 
 // we can have post methods here too
 

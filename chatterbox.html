@@ -10,7 +10,7 @@
   <script>
     // DO NOT MODIFY THIS CODE
     if (!/(&|\?)username=/.test(window.location.search)) {
-      var search = window.location.search;
+      var search u = window.location.search;
       if (!/\?/.test(search)) {
         search += '?';
       }
@@ -29,13 +29,14 @@
     <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
     <div id="rooms">
       Room:
-      <select></select>
-      <button>Add Room</button>
+      <select id="rooms-select"></select>
+      <button id="rooms-button">Add Room</button>
     </div>
     <form action="#" id="send" method="post">
       <input type="text" name="message" id="message" />
       <input type="submit" name="submit" class="submit" />
     </form>
+    <button id="update">Update</button>
   </div>
   <div id="chats"></div>
   <script src="client/env/config.js"></script>
@@ -44,13 +45,18 @@
   <script src="client/scripts/friends.js"></script>
   <script src="client/scripts/messages.js"></script>
   <script src="client/scripts/formView.js"></script>
+  <script src="client/scripts/UpdateView.js"></script>
   <script src="client/scripts/roomsView.js"></script>
   <script src="client/scripts/messageView.js"></script>
   <script src="client/scripts/messagesView.js"></script>
   <script src="client/scripts/app.js"></script>
   <script>
+
     $(() => App.initialize());
+    // $(() => Messages.update());
+
   </script>
+
 </body>
 
 </html>
