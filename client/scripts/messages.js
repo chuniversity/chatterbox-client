@@ -5,10 +5,10 @@ var Messages = {
       //TO PREVENT XSS INJECTION
       //if username, text, or roomname includes "<" ignore
       if (data[i].text !== null) {
-        if (data[i].roomname === null) {
-          data[i].roomname = 'Lobby';
+        if (data[i].roomname === null || data[i].roomname === '') {
+          data[i].roomname = 'lobby';
         }
-        if (data[i].text.indexOf("<")) {
+        if (data[i].text.indexOf('<')) {
           Messages.storage.push(data[i]);
         }
       }

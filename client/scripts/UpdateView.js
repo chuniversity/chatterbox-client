@@ -10,6 +10,8 @@ var UpdateView = {
     event.preventDefault();
     MessagesView.$chats.empty();
     Messages.storage = [];
+    $('#rooms-select').empty();
+    Rooms.storage = [];
     App.fetch();
   }
 };
